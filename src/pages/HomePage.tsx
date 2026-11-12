@@ -27,6 +27,8 @@ const skillGroups = [
   { title: 'Herramientas y procesos', skills: ['SAP Signavio', 'SAP Fiori Guidelines', 'ITIL'] },
 ];
 
+const cvUrl = `${import.meta.env.BASE_URL}evidencias/cv/CV.pdf`;
+
 export const HomePage = () => {
   const { isDark, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -259,16 +261,16 @@ export const HomePage = () => {
               <p className="eyebrow">04 / Trayectoria</p>
               <h2>Currículum</h2>
               <p className="section-lede">Consulta o descarga el documento original en PDF.</p>
-              <a className="button button--primary" href="evidencias/cv/CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a className="button button--primary" href={cvUrl} target="_blank" rel="noopener noreferrer">
                 Abrir CV <ArrowUpRight size={16} />
               </a>
-              <a className="resume-download" href="evidencias/cv/CV.pdf" download>
+              <a className="resume-download" href={cvUrl} download>
                 Descargar PDF <ArrowDown size={15} />
               </a>
             </div>
             <div className="resume-preview">
               <div className="resume-preview__bar"><span /><span /><span /><small>CV · PDF</small></div>
-              <iframe src="evidencias/cv/CV.pdf" title="Vista previa del currículum de Luis Gael Bonilla Paleta" loading="lazy" />
+              <iframe src={cvUrl} title="Vista previa del currículum de Luis Gael Bonilla Paleta" loading="lazy" />
             </div>
           </div>
         </section>
